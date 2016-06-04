@@ -41,7 +41,7 @@ Nature-inspired metaheuristic algorithms are considered to be the one of the mos
 
 
 \section{\uppercase{Related Work}}
-Today, there exist many different nature-inspired optimization libraries and toolboxes. Some of them are developed for special type of nature-inspired optimization like GEATbx [ ], which contains many variants of the genetic algorithms, genetic Programming, their methods and operators. GEATbx is implemented in MATLAB environment. The authors in [] developed GAlib library, which contains a set of C++ genetic algorithm tools and operators for different optimization problems. In [], the authors developed PSwarm which is a framework writen in C and Matalb. The library contains different version of the particle swarm optimization and different test benchmarks. 
+Today, there exist many different nature-inspired optimization libraries and toolboxes. Some of them are developed for special type of nature-inspired optimization like GEATbx [ ], which contains many variants of the genetic algorithms, genetic Programming, their methods and operators. GEATbx is implemented in MATLAB environment. The authors in [] developed GAlib library, which contains a set of C++ genetic algorithm tools and operators for different optimization problems. In [], the authors developed PSwarm which is a framework written in C and Matalb. The library contains different version of the particle swarm optimization and different test benchmarks. 
 
 \section{\uppercase{Why Python?}}
 
@@ -50,14 +50,25 @@ Moreover, Python has cross-platform runability, which works with different opera
 
 
 
+\section{Design issues}
 
-\section{\uppercase{Benchmarks problems}}
-\label{sec:Benchmarks}
+Most of nature inspired metaheuristics are population-based algorithms. These algorithms start by randomly initializing a set of individuals each of which represents a candidate solution. Conventionally, in most of state-of-art evolutionary algorithms frameworks, populations are implemented as 2-dimensional arrays while individuals are implemented as 1-dimensional array. For example an individual $I$ and a population $P$ can be represented as given in equations \ref{eq:individual} and \ref{eq:population}.
 
-\begin{enumerate}
-\item 
+\begin{equation}
+I_{i}=[\begin{array}{cccc}
+x_{i}^{1} & x_{i}^{2} & ... & x_{i}^{d}\end{array}]
+\label{eq:individual}
+\end{equation}
 
-\end{enumerate}
+\begin{equation}
+P=\left[\begin{array}{cccc}
+x_{1}^{1} & x_{1}^{2} & ... & x_{1}^{d}\\
+x_{2}^{1} & x_{2}^{2} & ... & x_{2}^{d}\\
+\vdots & \vdots & \vdots & \vdots\\
+x_{n}^{1} & x_{n}^{2} & ... & x_{n}^{d}
+\end{array}\right]
+\label{eq:population}
+\end{equation}
 
 
 \section*{\uppercase{Acknowledgements}}
