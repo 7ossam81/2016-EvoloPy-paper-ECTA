@@ -70,6 +70,19 @@ x_{n}^{1} & x_{n}^{2} & ... & x_{n}^{d}
 \label{eq:population}
 \end{equation}
 
+In EvoloPy, \texttt{Numpy} is chosen to define and represent the populations and individuals in the optimizers. Numpy library is one of the main packages for scientific computing in Python. \texttt{Numpy} has many things in common with Matlab. This makes it easier for researchers who are familiar with Matlab use EvoloPy. 
+
+The \texttt{Numpy}’s array class  \texttt{ndarray} is used to define 1-dimensional and 2-dimensional arrays that represent individuals and populations, respectively. For example, to define a randomly generated initial population with 50 individuals and 100 dimensions the following python line of code can be used
+
+\texttt{initialPop = np.random.rand(500,100)}
+
+
+Moreover, with \texttt{Numpy} it is possible to perform vector operations in simple and compact syntax. For example, a common operation is used in many metaheuristic algorithms is to check the boundaries of the elements of the individuals after updating them. This can be performed all at once with \texttt{Numpy} as follows:
+
+\texttt{newPop=numpy.clip(oldPop, lb, ub)}
+
+Where \texttt{lb} and \texttt{ub} are the upper and lower bounds respectively.
+
 
 \section*{\uppercase{Acknowledgements}}
 
