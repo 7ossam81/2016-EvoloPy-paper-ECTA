@@ -9,6 +9,8 @@
 \usepackage{amsthm}
 \usepackage{multicol}
 \usepackage{pslatex}
+\usepackage{subfigure}
+
 \usepackage{apalike}
 \usepackage{SCITEPRESS}     % Please add other packages that you may need BEFORE the SCITEPRESS.sty package.
 
@@ -89,6 +91,46 @@ Moreover, with \texttt{Numpy} it is possible to perform vector operations in sim
 
 Where \texttt{lb} and \texttt{ub} are the upper and lower bounds respectively.
 
+
+\begin{figure*}[H]
+\centering
+
+\begin{tabular}{ c c  }
+\centering
+\subfigure[BAT]{\includegraphics[scale=.45]{BAT.eps}\label{t1}} & 
+\subfigure[CS]{\includegraphics[scale=.45]{CS.eps}} 
+
+
+\\
+\subfigure[FPA]{\includegraphics[scale=.45]{FPA}\label{subfigf6t}} & 
+\subfigure[GWO]{\includegraphics[scale=.45]{GWO}\label{subfigf2s}} 
+
+
+\\
+\subfigure[MFO]{\includegraphics[scale=.45]{MFO.eps}\label{subfigf4s}} & 
+\subfigure[MVO]{\includegraphics[scale=.45]{MVO.eps}\label{subfigf6s}}
+
+\\
+
+\subfigure[PSO]{\includegraphics[scale=0.45]{PSO.eps}\label{t2}} &  
+\subfigure[WOA]{\includegraphics[scale=0.45]{WOA.eps}\label{subfigf4t}} 
+
+
+\\
+
+\end{tabular}
+
+\caption{Comparison between between the metaheuristic optimizers in EvoloPy and Matlab based on execution time of the main iteration.}
+\label{fig:complexity}
+\vspace{-0.0in}
+\end{figure*}
+
+
+
+
+
+
+%\subfigure[Liver]{\includegraphics[scale=0.35]{BAT.eps}\label{subfigf6t}} 
 
 \section*{\uppercase{Acknowledgements}}
 
