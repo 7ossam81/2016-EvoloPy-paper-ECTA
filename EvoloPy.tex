@@ -127,11 +127,15 @@ Moreover, with \texttt{Numpy} it is possible to perform vector operations in sim
 
 Where \texttt{lb} and \texttt{ub} are the upper and lower bounds respectively.
 
-\begin{figure*}[ht]
-\centerline{\includegraphics[scale=0.50]{classD.eps}}
+\begin{figure*}[http]
+\centerline{\includegraphics[scale=0.52]{classD.eps}}
 \caption{Class diagram of the EvoloPy framework}
 \label{fig:framework}
 \end{figure*}
+
+We use the UML representation to demonstrate the main components of EvoloPy framework. A class diagram illustrating the EvoloPy components and their relationships is presented in Figure \ref{fig:framework}. The EvoloPy framework consists of eleven classes, three of them for coordinating and simplifying the optimization process, namely; optimizer, benchmarks, and solution. On the other hand, the other eight classes representing the actual nature-inspired optimizers. The core flow of EvoloPy relies in that an optimizer solves a benchmark using one or more optimizers to find global solutions. We have used a generic classes names in the framework in order to make it very easy to flow and general enough to be modified and usable.
+
+
 
 
 
@@ -159,7 +163,7 @@ The efficient running time of EvoloPy compared to Matlab implementation when app
 
 
 \\
-\subfigure[FPA]{\includegraphics[scale=.45]{FPA}\label{subfigf6t}} & 
+\subfigure[FFA]{\includegraphics[scale=.45]{FPA}\label{subfigf6t}} & 
 \subfigure[GWO]{\includegraphics[scale=.45]{GWO}\label{subfigf2s}} 
 
 
