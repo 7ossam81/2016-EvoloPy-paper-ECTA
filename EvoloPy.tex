@@ -91,6 +91,9 @@ Moreover, with \texttt{Numpy} it is possible to perform vector operations in sim
 
 Where \texttt{lb} and \texttt{ub} are the upper and lower bounds respectively.
 
+\section{Comparison with Matlab}
+
+In this section we compare the metaheuristic algorithms implemented so far in EvoloPy with their peers in Matlab based on their running time. The idea here is to measure the running time of the main loop of each algorithm in EvoloPy and Matlab with an equal number of function evaluations. The experiments were performed on on a personal machine with an  Intel(R) Core(TM) i5-2400 CPU at 3.10Ghz and a memory of 4 GB running Windows 7 professional 32bit operating system. In all experiments, the population size and the number of iterations was set for all algorithms to 50, and 100, respectively. In order to study the effect of the size of the problem to be solved on the running time of the algorithms, all optimizer are executed using different dimension sizes ranging from a small size of 50 elements reaching up to 20,000 in both implementations, Matlab and EvoloPy. 
 
 \begin{figure*}[H]
 \centering
