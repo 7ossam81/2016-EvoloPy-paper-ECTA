@@ -62,9 +62,35 @@ Comparing our developed framework to the frameworks listed above, all frameworks
 Python is a general purpose scripting language which has a clear and simple syntax. With the rapid development of mature, advanced  and open source scientific computing libraries and packages, Python became as one of the most popular and powerful languages for scientific computing.
 Moreover, Python has cross-platform runability, which works with different operating systems, and has ability to access libraries written in different programming languages and computing environments. Python also can support small-form devices, embedded systems, and microcontrollers. In addition, Python needs very minimal setup procedure to start with. Python uses modular and object based programming, which is a popular methodology to organize classes, functions, and procedures into hierarchical namespaces. All these reason has turned Python to be a popular language in a huge community of scientists. 
 
+\section{\uppercase{Toolbox Overview and Featured algorithms}}
+
+EvoloPy provides a set of classical and recent nature-inspired metaheuristic optimizers with an easy-to-use interface. The toolbox incorporates four main components which are described as follows: 
+
+\begin{itemize}
+\item The Optimizer: this is the main interface of the of the toolbox in which the users can select a list of optimizers to run in their experiment. Using this interface, the user can configure common parameters for the algorithms like the maximum number of iterations for each run, the size of the population and the number of runs. In addition, a list of benchmark problems can be selected.
+
+\item The metaheuristics algorithms: simply this part includes the list of implemented optimizers in the framework. At the time of writing this paper, eight algorithms are implemented. A brief description of each algorithm is given as follows:
+
+\begin{itemize}
+\item PSO
+\item  FFA
+\item GWO
+\item WOA 
+\item MVO
+\item MFO
+\item BAT
+\item CS
+\end{itemize}
 
 
-\section{Design issues}
+
+\item Benchmark functions and problem definition: This part includes a set of common benchmark problems commonly used in the literature for the purpose of comparing different metaheuristic algorithms. Any new user-defined cost function could be added to this list.
+
+\item Results management and visualization: this component is responsible about exporting the results and and storing them in one common CSV file. 
+\end{itemize}
+
+
+\section{\uppercase{Design issues}}
 
 Most of nature inspired metaheuristics are population-based algorithms. These algorithms start by randomly initializing a set of individuals each of which represents a candidate solution. Conventionally, in most of state-of-art evolutionary algorithms frameworks, populations are implemented as 2-dimensional arrays while individuals are implemented as 1-dimensional array. For example an individual $I$ and a population $P$ can be represented as given in equations \ref{eq:individual} and \ref{eq:population}.
 
@@ -97,7 +123,7 @@ Moreover, with \texttt{Numpy} it is possible to perform vector operations in sim
 
 Where \texttt{lb} and \texttt{ub} are the upper and lower bounds respectively.
 
-\section{Comparison with Matlab}
+\section{\uppercase{Comparison with Matlab}}
 
 In this section we compare the metaheuristic algorithms implemented so far in EvoloPy with their peers in Matlab based on their running time. The idea here is to measure the running time of the main loop of each algorithm in EvoloPy and Matlab with an equal number of function evaluations. The experiments were performed on on a personal machine with an  Intel(R) Core(TM) i5-2400 CPU at 3.10Ghz and a memory of 4 GB running Windows 7 professional 32bit operating system. In all experiments, the population size and the number of iterations was set for all algorithms to 50, and 100, respectively. In order to study the effect of the size of the problem to be solved on the running time of the algorithms, all optimizer were executed using different dimension lengths ranging from a small number of 50 elements reaching up to 20,000 in both implementations, Matlab and EvoloPy. Note that the dimension length here indicates number of elements in the single individual or in another words, number of of variables in the objective function. All optimizers were applied to minimize the unimodal function given in Equation \ref{eq:f3}. 
 
@@ -151,7 +177,7 @@ The efficient running time of EvoloPy compared to Matlab implementation when app
 
 %\subfigure[Liver]{\includegraphics[scale=0.35]{BAT.eps}\label{subfigf6t}} 
 
-\section{Conclusions and future work}
+\section{\uppercase{Conclusions and future work}}
 
 
 
