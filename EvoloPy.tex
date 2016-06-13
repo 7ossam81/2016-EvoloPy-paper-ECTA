@@ -84,9 +84,9 @@ x_{n}^{1} & x_{n}^{2} & ... & x_{n}^{d}
 \label{eq:population}
 \end{equation}
 
-In EvoloPy, \texttt{Numpy} is chosen to define and represent the populations and individuals in the optimizers. Numpy library is one of the main packages for scientific computing in Python. \texttt{Numpy} has many things in common with Matlab. This makes it easier for researchers who are familiar with Matlab use EvoloPy. 
+In EvoloPy, \texttt{Numpy} is chosen to define and represent the populations and individuals in the optimizers. \texttt{Numpy} is an open-source extension to Python that provides common scientific computing and mathematical routines as pre-compiled and fast functions. \texttt{NumPy} also supports large multidimensional arrays and matrices and it offers a variety range of functions to handle and perform common operations on these arrays. \texttt{Numpy} has many things in common with Matlab. This makes it easier for researchers who are familiar with Matlab use EvoloPy. 
 
-The core data structure \texttt{ndarray} in \texttt{Numpy} is used to define 1-dimensional and 2-dimensional arrays that represent individuals and populations, respectively. For example, to define a randomly generated initial population with 50 individuals and 100 dimensions the following python line of code can be used
+The core data structure \texttt{ndarray} (abbreviation for N-dimensional array) in \texttt{Numpy} is used to define 1-dimensional and 2-dimensional arrays that represent individuals and populations, respectively. For example, to define a randomly generated initial population with 50 individuals and 100 dimensions the following python line of code can be used
 
 \texttt{initialPop = np.random.rand(500,100)}
 
