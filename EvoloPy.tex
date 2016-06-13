@@ -63,13 +63,6 @@ Python is a general purpose scripting language which has a clear and simple synt
 Moreover, Python has cross-platform runability, which works with different operating systems, and has ability to access libraries written in different programming languages and computing environments. Python also can support small-form devices, embedded systems, and microcontrollers. In addition, Python needs very minimal setup procedure to start with. Python uses modular and object based programming, which is a popular methodology to organize classes, functions, and procedures into hierarchical namespaces. All these reason has turned Python to be a popular language in a huge community of scientists. 
 
 
-	
-\begin{figure*}[ht]
-\centerline{\includegraphics[scale=0.40]{classD.eps}}
-\caption{EvoloPy framework  class diagram}
-\label{fig:framework}
-\end{figure*}
-
 
 \section{Design issues}
 
@@ -93,7 +86,7 @@ x_{n}^{1} & x_{n}^{2} & ... & x_{n}^{d}
 
 In EvoloPy, \texttt{Numpy} is chosen to define and represent the populations and individuals in the optimizers. Numpy library is one of the main packages for scientific computing in Python. \texttt{Numpy} has many things in common with Matlab. This makes it easier for researchers who are familiar with Matlab use EvoloPy. 
 
-The \texttt{Numpy}’s array class  \texttt{ndarray} is used to define 1-dimensional and 2-dimensional arrays that represent individuals and populations, respectively. For example, to define a randomly generated initial population with 50 individuals and 100 dimensions the following python line of code can be used
+The core data structure \texttt{ndarray} in \texttt{Numpy} is used to define 1-dimensional and 2-dimensional arrays that represent individuals and populations, respectively. For example, to define a randomly generated initial population with 50 individuals and 100 dimensions the following python line of code can be used
 
 \texttt{initialPop = np.random.rand(500,100)}
 
@@ -106,7 +99,7 @@ Where \texttt{lb} and \texttt{ub} are the upper and lower bounds respectively.
 
 \section{Comparison with Matlab}
 
-In this section we compare the metaheuristic algorithms implemented so far in EvoloPy with their peers in Matlab based on their running time. The idea here is to measure the running time of the main loop of each algorithm in EvoloPy and Matlab with an equal number of function evaluations. The experiments were performed on on a personal machine with an  Intel(R) Core(TM) i5-2400 CPU at 3.10Ghz and a memory of 4 GB running Windows 7 professional 32bit operating system. In all experiments, the population size and the number of iterations was set for all algorithms to 50, and 100, respectively. In order to study the effect of the size of the problem to be solved on the running time of the algorithms, all optimizer were executed using different dimension sizes ranging from a small size of 50 elements reaching up to 20,000 in both implementations, Matlab and EvoloPy. The optimizers were applied to minimize the unimodal function given in Equation \ref{eq:f3}. 
+In this section we compare the metaheuristic algorithms implemented so far in EvoloPy with their peers in Matlab based on their running time. The idea here is to measure the running time of the main loop of each algorithm in EvoloPy and Matlab with an equal number of function evaluations. The experiments were performed on on a personal machine with an  Intel(R) Core(TM) i5-2400 CPU at 3.10Ghz and a memory of 4 GB running Windows 7 professional 32bit operating system. In all experiments, the population size and the number of iterations was set for all algorithms to 50, and 100, respectively. In order to study the effect of the size of the problem to be solved on the running time of the algorithms, all optimizer were executed using different dimension lengths ranging from a small number of 50 elements reaching up to 20,000 in both implementations, Matlab and EvoloPy. Note that the dimension length here indicates number of elements in the single individual or in another words, number of of variables in the objective function. All optimizers were applied to minimize the unimodal function given in Equation \ref{eq:f3}. 
 
 
 
@@ -115,7 +108,9 @@ f(x)=\sum_{i=0}^{n-1}(\sum_{j=0}^{i-1}x_{j})^{2}
 \label{eq:f3}
 \end{equation}
 
-The results of EvoloPy and Matlab implementations are shown in Figure \ref{fig:comparison-time}. It can be noticed that with small dimension sizes there is no big significant difference in the running time between the two implementations. In most of the optimizers and up to a dimension size of 500  the running time was less than 250 second. 
+The results of EvoloPy and Matlab implementations are shown in Figure \ref{fig:comparison-time}. It can be noticed that with small dimension sizes there is no big significant difference in the running time between the two implementations. In most of the optimizers and up to a dimension size of 500  the running time was less than 250 second. However, for higher sizes, the difference in the running time  remarkably increases. On a dimension length of 20,000 the ration was around 1:2 for most of the optimizers.
+
+The efficient running time of EvoloPy compared to Matlab implementation when applied for solving problems with large number of variables can be explained due to the use of the powerful N-dimensional array object \texttt{NumPY} to represent individuals and populations.
 
 \begin{figure*}[H]
 \centering
