@@ -54,7 +54,7 @@ In \cite {DEAP_JMLR2012}, the authors developed a novel evolutionary computation
 
 In \cite{Durillo2011}, jMetal is developed, which is a framework contains many metaheuristic algorithms implemented in Java programming. The authors employ the object-oriented architecture to develop the framework. jMetal includes many features such as: multi-objective algorithms, parallel algorithms, constrained problems, and different representations of the problem variables. In \cite{Cahon2004,humeau13}, the authors present a white-box object-oriented framework called ParadisEO. ParadisEO is developed by integrating Evolving Objects (EO) - which is an C++ evolutionary computation framework - and many distributed metaheuristics including local searches (LS), and hybridization mechanisms.  
 
-Comparing our developed framework to the frameworks listed above, all frameworks were contained traditional nature-inspired algorithms such as: GA, GP, PSO, ES, and many others. Whereas in our developed framework, the framework includes the traditional nature-inspired algorithms such as PSO and nine recent nature-inspired algorithms such as: GWO, MVO, MFO, WOA, BAT, CS, and FFA. To the best of our knowledge, EvoloPy framework is the first work contains such optimizes that developed in Python language. EvoloPy is developed in very effceint way to solve computationally expensive optimization functions with very high dimensions.
+Comparing our developed framework to the frameworks listed above, all frameworks were contained traditional nature-inspired algorithms such as: GA, GP, PSO, ES, and many others. Whereas in our developed framework, the framework includes the traditional nature-inspired algorithms such as PSO and nine recent nature-inspired algorithms such as: GWO, MVO, MFO, WOA, BAT, CS, and FFA. To the best of our knowledge, EvoloPy framework is the first work contains such optimizes that developed in Python language. EvoloPy is developed in very efficient way to solve computationally expensive optimization functions with very high dimensions.
 
 
 \section{\uppercase{Why Python?}}
@@ -122,6 +122,14 @@ Moreover, with \texttt{Numpy} it is possible to perform vector operations in sim
 \texttt{newPop=numpy.clip(oldPop, lb, ub)}
 
 Where \texttt{lb} and \texttt{ub} are the upper and lower bounds respectively.
+
+\begin{figure*}[ht]
+\centerline{\includegraphics[scale=0.50]{classD.eps}}
+\caption{Class diagram of the EvoloPy framework}
+\label{fig:framework}
+\end{figure*}
+
+
 
 \section{\uppercase{Comparison with Matlab}}
 
