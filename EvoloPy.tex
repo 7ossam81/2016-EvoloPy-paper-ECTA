@@ -66,7 +66,7 @@ Comparing our developed framework to the frameworks listed above, all frameworks
 Python is a general purpose scripting language which has a clear and simple syntax. With the rapid development of mature, advanced  and open source scientific computing libraries and packages, Python became as one of the most popular and powerful languages for scientific computing.
 Moreover, Python has cross-platform runability, which works with different operating systems, and has ability to access libraries written in different programming languages and computing environments. Python also can support small-form devices, embedded systems, and microcontrollers. In addition, Python needs very minimal setup procedure to start with. Python uses modular and object based programming, which is a popular methodology to organize classes, functions, and procedures into hierarchical namespaces. All these reason has turned Python to be a popular language in a huge community of scientists. 
 
-\section{\uppercase{Framework Overview and Featured algorithms}}
+\section{\uppercase{Framework Overview}}
 
 EvoloPy provides a set of classical and recent nature-inspired metaheuristic optimizers with an easy-to-use interface. The framework incorporates four main components which are described as follows: 
 
@@ -90,7 +90,7 @@ EvoloPy provides a set of classical and recent nature-inspired metaheuristic opt
 
 \item Benchmark functions and problem definition: This part includes a set of common benchmark problems commonly used in the literature for the purpose of comparing different metaheuristic algorithms. Any new user-defined cost function could be added to this list.
 
-\item Results management and visualization: this component is responsible about exporting the results and and storing them in one common CSV file. 
+\item Results management: this component is responsible for exporting the results and storing them in one common CSV file. 
 \end{itemize}
 
 
@@ -114,14 +114,14 @@ x_{n}^{1} & x_{n}^{2} & ... & x_{n}^{d}
 \label{eq:population}
 \end{equation}
 
-In EvoloPy, \texttt{Numpy} is chosen to define and represent the populations and individuals in the optimizers. \texttt{Numpy} is an open-source extension to Python that provides common scientific computing and mathematical routines as pre-compiled and fast functions. \texttt{NumPy} also supports large multidimensional arrays and matrices and it offers a variety range of functions to handle and perform common operations on these arrays. \texttt{Numpy} has many things in common with Matlab. This makes it easier for researchers who are familiar with Matlab use EvoloPy. 
+In EvoloPy, \texttt{Numpy} is chosen to define and represent the populations and individuals in the optimizers. \texttt{Numpy} is an open-source extension to Python that provides common scientific computing and mathematical routines as pre-compiled and fast functions. \texttt{NumPy} also supports large multidimensional arrays and matrices and it offers a variety range of functions to handle and perform common operations on these arrays. \texttt{Numpy} has many things in common with Matlab. This makes it easier for researchers who are familiar with Matlab to use EvoloPy. 
 
 The core data structure \texttt{ndarray} (abbreviation for N-dimensional array) in \texttt{Numpy} is used to define 1-dimensional and 2-dimensional arrays that represent individuals and populations, respectively. For example, to define a randomly generated initial population with 50 individuals and 100 dimensions the following python line of code can be used
 
 \texttt{initialPop = np.random.rand(500,100)}
 
 
-Moreover, with \texttt{Numpy} it is possible to perform vector operations in simple and compact syntax. For example, a common operation is used in many metaheuristic algorithms is to check the boundaries of the elements of the individuals after updating them. This can be performed all at once with \texttt{Numpy} as follows:
+Moreover, with \texttt{Numpy} it is possible to perform vector operations in simple and compact syntax. For example, one of the common operations used in many metaheuristic algorithms is to check the boundaries of the elements of the individuals after updating them. This can be performed all at once with \texttt{Numpy} as follows:
 
 \texttt{newPop=numpy.clip(oldPop, lb, ub)}
 
@@ -133,7 +133,7 @@ Where \texttt{lb} and \texttt{ub} are the upper and lower bounds respectively.
 \label{fig:framework}
 \end{figure*}
 
-We use the UML representation to demonstrate the main components of EvoloPy framework. A class diagram illustrating the EvoloPy components and their relationships is presented in Figure \ref{fig:framework}. The EvoloPy framework consists of eleven classes, three of them for coordinating and simplifying the optimization process, namely; optimizer, benchmarks, and solution. On the other hand, the other eight classes representing the actual nature-inspired optimizers. The core flow of EvoloPy relies in that an optimizer solves a benchmark using one or more optimizers to find global solutions. We have used a generic classes names in the framework in order to make it very easy to flow and general enough to be modified and usable.
+To demonstrate the main components of EvoloPy framework we use the UML representation. A class diagram illustrating the EvoloPy components and their relationships is presented in Figure \ref{fig:framework}. The EvoloPy framework consists of eleven classes, three of them for coordinating and simplifying the optimization process, namely; optimizer, benchmarks, and solution. On the other hand, the other eight classes represent the actual nature-inspired optimizers. The core flow of EvoloPy relies in that an optimizer solves a benchmark using one or more optimizers to find global solutions. We have used a generic classes names in the framework in order to make it very easy to flow and general enough to be modified and usable.
 
 
 
@@ -141,7 +141,7 @@ We use the UML representation to demonstrate the main components of EvoloPy fram
 
 \section{\uppercase{Comparison with Matlab}}
 
-In this section we compare the metaheuristic algorithms implemented so far in EvoloPy with their peers in Matlab based on their running time. The idea here is to measure the running time of the main loop of each algorithm in EvoloPy and Matlab with an equal number of function evaluations. The experiments were performed on on a personal machine with an  Intel(R) Core(TM) i5-2400 CPU at 3.10Ghz and a memory of 4 GB running Windows 7 professional 32bit operating system. In all experiments, the population size and the number of iterations was set for all algorithms to 50, and 100, respectively. In order to study the effect of the size of the problem to be solved on the running time of the algorithms, all optimizer were executed using different dimension lengths ranging from a small number of 50 elements reaching up to 20,000 in both implementations, Matlab and EvoloPy. Note that the dimension length here indicates number of elements in the single individual or in another words, number of of variables in the objective function. All optimizers were applied to minimize the unimodal function given in Equation \ref{eq:f3}. 
+In this section we compare the metaheuristic algorithms implemented so far in EvoloPy with their peers in Matlab based on their running time. The idea here is to measure the running time of the main loop of each algorithm in EvoloPy and Matlab with an equal number of function evaluations. The experiments were performed on on a personal machine with an  Intel(R) Core(TM) i5-2400 CPU at 3.10Ghz and a memory of 4 GB running Windows 7 professional 32bit operating system. In all experiments, the population size and the number of iterations were set to 50, and 100, respectively for all algorithms . In order to study the effect of the size of the problem on the running time of the algorithms, all optimizer were executed using different dimension lengths ranging from a small number of 50 elements reaching up to 20,000 in both implementations, Matlab and EvoloPy. Note that the dimension length here indicates number of elements in a single individual or in another words, number of of variables in the objective function. All optimizers were applied to minimize the unimodal function given in Equation \ref{eq:f3}. 
 
 
 
@@ -150,7 +150,7 @@ f(x)=\sum_{i=0}^{n-1}(\sum_{j=0}^{i-1}x_{j})^{2}
 \label{eq:f3}
 \end{equation}
 
-The results of EvoloPy and Matlab implementations are shown in Figure \ref{fig:comparison-time}. It can be noticed that with small dimension sizes there is no big significant difference in the running time between the two implementations. In most of the optimizers and up to a dimension size of 500  the running time was less than 250 second. However, for higher sizes, the difference in the running time  remarkably increases. On a dimension length of 20,000 the ration was around 1:2 for most of the optimizers.
+The results of EvoloPy and Matlab implementations are shown in Figure \ref{fig:comparison-time}. It can be noticed that with small dimension sizes there is no significant difference in the running time between the two implementations. In most of the optimizers and up to a dimension size of 500  the running time was less than 250 second. However, for higher sizes, the difference in the running time  remarkably increases. On a dimension length of 20,000 the ratio is around 1:2 for most of the optimizers.
 
 The efficient running time of EvoloPy compared to Matlab implementation when applied for solving problems with large number of variables can be explained due to the use of the powerful N-dimensional array object \texttt{NumPY} to represent individuals and populations.
 
@@ -181,7 +181,7 @@ The efficient running time of EvoloPy compared to Matlab implementation when app
 
 \end{tabular}
 
-\caption{Comparison between between the metaheuristic optimizers in EvoloPy and Matlab based on execution time of the main iteration.}
+\caption{Comparison between the metaheuristic optimizers in EvoloPy and Matlab based on the running time of the main iteration.}
 \label{fig:comparison-time}
 \vspace{-0.0in}
 \end{figure*}
@@ -195,9 +195,9 @@ The efficient running time of EvoloPy compared to Matlab implementation when app
 
 \section{\uppercase{Conclusions and future work}}
 
-EvoloPy is a framework written in Python that provides and maintains classical and recent nature inspired metaheuristic algorithms. Being coded in Python and its NumPy extension, the implemented algorithms are boosted by the powerful and efficient multi-dimensional objects. In comparison with Matlab, EvoloPy shows more efficiency in terms of running time for problems with  high dimension and large number of variables. 
+EvoloPy is a framework written in Python that provides and maintains classical and recent nature inspired metaheuristic algorithms. Being coded in Python with its NumPy extension, the implemented algorithms are boosted by the powerful and efficient multi-dimensional objects. In comparison with Matlab, EvoloPy shows more efficiency in terms of running time for problems with  high dimension and large number of variables. 
 
-For future work, more recent and robust metaheuristic algorithms are planned to be added to the framework. It is also interesting to expand the experiments presented in this paper to include a comparison with Matlab or other implementations based on more complex and sophisticated optimization functions rather than a simple one. 
+For future work, more recent and robust metaheuristic algorithms are planned to be added to the framework. It is also interesting to expand the experiments presented in this paper to include a comparison with Matlab or other implementations based on more complex and sophisticated optimization functions rather than simple ones. 
 
 
 
