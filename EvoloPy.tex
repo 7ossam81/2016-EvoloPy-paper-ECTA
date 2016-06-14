@@ -45,7 +45,7 @@ In general, nature-inspired algorithms can fall into two main categories: Swarm 
 
 On the other hand, evolutionary based algorithms are inspired by some concepts from the Darwinian theories about evolution and natural selection. Such algorithms include Genetic algorithm (GA) \cite{Sivanandam}, Genetic Programming (GP)\cite{Koza1992}, and Evolution Strategy (ES)\cite{Beyer2002}. These algorithms use different strategies to evolve and find good solutions for difficult problems. 
 
-An important turn in the research field was made when the No Free Lunch Theorem (NFL) was released. NFL states that no algorithm is superior to all other algorithms in all optimization problems. This means that if an algorithm A outperforms another algorithm B for some type of optimization problems then algorithm B outperforms A in another types of problems. Since then, researcher and practitioners have been developed a wide range of metaheuristic algorithms and investigated their applications in different types of tough optimization problems. In the last decade, most of the researchers implemented and shared their proposed optimizers in Matlab. This is due its simplicity and ease of use. However, Matlab is a commercial and expensive software and portability is a big issue.
+An important turn in the research field was made when the No Free Lunch Theorem (NFL) was released \cite{wolpert1997no,ho2002simple}. NFL states that no algorithm is superior to all other algorithms in all optimization problems. This means that if an algorithm A outperforms another algorithm B for some type of optimization problems then algorithm B outperforms A in another types of problems. Since then, researcher and practitioners have been developed a wide range of metaheuristic algorithms and investigated their applications in different types of tough optimization problems. In the last decade, most of the researchers implemented and shared their proposed optimizers in Matlab. This is due its simplicity and ease of use. However, Matlab is a commercial and expensive software and portability is a big issue.
 
 In this paper, we introduce EvoloPy which is a framework writen in Python that provides well-regarded and recent nature inspired optimizers. The goal of the package is to take the advantage of the rapidly growing scientific community of Python and provide a set of robust optimizers as free and open source software. We believe that implementing such algorithms in Python will increase their popularity and portability among researchers. Moreover, the powerful libraries and packages available in Python will make it more feasible to apply metaheurostic algorithms for solving complex problems on a much larger scale.
 
@@ -73,17 +73,17 @@ EvoloPy provides a set of classical and recent nature-inspired metaheuristic opt
 \begin{itemize}
 \item The Optimizer: this is the main interface of the of the toolbox in which the users can select a list of optimizers to run in their experiment. Using this interface, the user can configure common parameters for the algorithms like the maximum number of iterations for each run, the size of the population and the number of runs. In addition, a list of benchmark problems can be selected.
 
-\item The metaheuristics algorithms: simply this part includes the list of implemented optimizers in the framework. At the time of writing this paper, eight algorithms are implemented. A brief description of each algorithm is given as follows:
+\item The metaheuristics algorithms: simply this part includes the list of implemented optimizers in the framework. At the time of writing this paper, the following eight algorithms are implemented:
 
 \begin{itemize}
-\item PSO
-\item  FFA
-\item GWO
-\item WOA 
-\item MVO
-\item MFO
-\item BAT
-\item CS
+\item Particle Swarm Optimization (PSO)
+\item  Firefly Algorithm (FFA) \cite{Yang2010FFA} 
+\item Gray Wolf Optimizer (GWO)\cite{Mirjalili201446}
+\item Whale Optimization Algorithm (WOA) \cite{Mirjalili201651}
+\item Multi-Verse Optimizer (MVO) \cite{Mirjalili2016}
+\item Moth Flame Optimizer (MFO) \cite{Mirjalili2015228}
+\item Bat Algorithm (BAT) \cite{Yang2010}
+\item Cuckoo Search Algorithm (CS) \cite{Yang2009}
 \end{itemize}
 
 
@@ -127,8 +127,8 @@ Moreover, with \texttt{Numpy} it is possible to perform vector operations in sim
 
 Where \texttt{lb} and \texttt{ub} are the upper and lower bounds respectively.
 
-\begin{figure*}[http]
-\centerline{\includegraphics[scale=0.52]{classD.eps}}
+\begin{figure*}
+\centerline{\includegraphics[scale=0.33]{classD.eps}}
 \caption{Class diagram of the EvoloPy framework}
 \label{fig:framework}
 \end{figure*}
@@ -201,7 +201,7 @@ For future work, more recent and robust metaheuristic algorithms are planned to 
 
 
 
-\vfill
+
 \bibliographystyle{apalike}
 {\small
 \bibliography{ref}}
