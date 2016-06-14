@@ -20,7 +20,7 @@
 
 \begin{document}
 
-\title{EvoloPy: An open source Nature-Inspired Optimization Toolbox in Python}
+\title{EvoloPy: An open source Nature-Inspired Optimization Framework in Python}
 
 \author{\authorname{First Author Name\sup{1}, Second Author Name\sup{1} and Third Author Name\sup{2}}
 \affiliation{\sup{1}Institute of Problem Solving, XYZ University, My Street, MyTown, MyCountry}
@@ -30,7 +30,7 @@
 
 \keywords{The paper must have at least one keyword. The text must be set to 9-point font size and without the use of bold or italic font style. For more than one keyword, please use a comma as a separator. Keywords must be titlecased.}
 
-\abstract{EvoloPy is an open source and cross-platform Python toolbox that implements a wide range of classical and recent nature-inspired metaheuristic algorithms. The goal of this toolbox is to facilitate the use of metaheuristic algorithms by non-specialists coming from different domains. With a simple interface and minimal dependencies, it is easier for researchers and practitioners to utilize EvoloPy for optimizing and benchmarking their own defined problems using the most powerful metaheuristic optimizers in the literature. On the other hand, the design of this toolbox makes it very easy for the researchers in the domain to integrate their own optimizers and compare their performance to the state of art algorithms. }
+\abstract{EvoloPy is an open source and cross-platform Python framework that implements a wide range of classical and recent nature-inspired metaheuristic algorithms. The goal of this framework is to facilitate the use of metaheuristic algorithms by non-specialists coming from different domains. With a simple interface and minimal dependencies, it is easier for researchers and practitioners to utilize EvoloPy for optimizing and benchmarking their own defined problems using the most powerful metaheuristic optimizers in the literature. On the other hand, the design of this framework makes it very easy for the researchers in the domain to integrate their own optimizers and compare their performance to the state of art algorithms. }
 
 
 \onecolumn \maketitle \normalsize \vfil
@@ -52,7 +52,7 @@ In this paper, we introduce EvoloPy which is a framework writen in Python that p
 
 
 \section{\uppercase{Related Work}}
-Today, there exist many different nature-inspired optimization libraries and toolboxes. Some of them are developed for special type of nature-inspired optimization like GEATbx \cite{GEATbx}, which is a toolbox contains many variants of the genetic algorithms, and genetic Programming. GEATbx is implemented in MATLAB environment and provides many global optimization capabilities. The authors in \cite {GAlib} developed GAlib library, which contains a set of C++ genetic algorithm tools and operators for different optimization problems. GAlib is built on UNIX platforms and supported parallel experiments. 
+Today, there exist many different nature-inspired optimization libraries and frameworks. Some of them are developed for special type of nature-inspired optimization like GEATbx \cite{GEATbx}, which is a framework contains many variants of the genetic algorithms, and genetic Programming. GEATbx is implemented in MATLAB environment and provides many global optimization capabilities. The authors in \cite {GAlib} developed GAlib library, which contains a set of C++ genetic algorithm tools and operators for different optimization problems. GAlib is built on UNIX platforms and supported parallel experiments. 
 
 In \cite {DEAP_JMLR2012}, the authors developed a novel evolutionary computation python framework called DEAP to simplify the execution of many optimization ideas with  parallelisation features. The DEAP Framework includes many nature-inspired algorithms with different variations such as: Genetic Algorithm, Genetic Programing (GP), Evolution Strategies (ES), Particle Swarm Optimization (PSO), Differential Evolution (DE), and multi-objective optimization. In addition, DEAP includes Benchmarks modules containing many test functions for evaluations. In \cite{Wagner04}, the author presents a generic optimization environment named HeuristicLab, which is implemented using C\# language. HeuristicLab is a framework for heuristic, evolutionary algorithms, and machine learning. HeuristicLab includes many algorithms such as: Genetic Programming, Age-layered Population, Structure (ALPS), Evolution Strategy, Genetic Algorithm, Island Genetic Algorithm, Particle Swarm Optimization, Relevant Alleles Preserving GA, and many others. 
 
@@ -66,12 +66,12 @@ Comparing our developed framework to the frameworks listed above, all frameworks
 Python is a general purpose scripting language which has a clear and simple syntax. With the rapid development of mature, advanced  and open source scientific computing libraries and packages, Python became as one of the most popular and powerful languages for scientific computing.
 Moreover, Python has cross-platform runability, which works with different operating systems, and has ability to access libraries written in different programming languages and computing environments. Python also can support small-form devices, embedded systems, and microcontrollers. In addition, Python needs very minimal setup procedure to start with. Python uses modular and object based programming, which is a popular methodology to organize classes, functions, and procedures into hierarchical namespaces. All these reason has turned Python to be a popular language in a huge community of scientists. 
 
-\section{\uppercase{Toolbox Overview and Featured algorithms}}
+\section{\uppercase{Framework Overview and Featured algorithms}}
 
-EvoloPy provides a set of classical and recent nature-inspired metaheuristic optimizers with an easy-to-use interface. The toolbox incorporates four main components which are described as follows: 
+EvoloPy provides a set of classical and recent nature-inspired metaheuristic optimizers with an easy-to-use interface. The framework incorporates four main components which are described as follows: 
 
 \begin{itemize}
-\item The Optimizer: this is the main interface of the of the toolbox in which the users can select a list of optimizers to run in their experiment. Using this interface, the user can configure common parameters for the algorithms like the maximum number of iterations for each run, the size of the population and the number of runs. In addition, a list of benchmark problems can be selected.
+\item The Optimizer: this is the main interface of the of the framework in which the users can select a list of optimizers to run in their experiment. Using this interface, the user can configure common parameters for the algorithms like the maximum number of iterations for each run, the size of the population and the number of runs. In addition, a list of benchmark problems can be selected.
 
 \item The metaheuristics algorithms: simply this part includes the list of implemented optimizers in the framework. At the time of writing this paper, the following eight algorithms are implemented:
 
