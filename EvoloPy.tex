@@ -30,7 +30,7 @@
 
 \keywords{Evolutionary, Swarm Optimization, Metaheuristic, Optimization, Python, Framework}
 
-\abstract{EvoloPy is an open source and cross-platform Python framework that implements a wide range of classical and recent nature-inspired metaheuristic algorithms. The goal of this framework is to facilitate the use of metaheuristic algorithms by non-specialists coming from different domains. With a simple interface and minimal dependencies, it is easier for researchers and practitioners to utilize EvoloPy for optimizing and benchmarking their own defined problems using the most powerful metaheuristic optimizers in the literature. On the other hand, the design of this framework makes it very easy for the researchers in the domain to integrate their own optimizers and compare their performance to the state of art algorithms. }
+\abstract{EvoloPy is an open source and cross-platform Python framework that implements a wide range of classical and recent nature-inspired metaheuristic algorithms. The goal of this framework is to facilitate the use of metaheuristic algorithms by non-specialists coming from different domains. With a simple interface and minimal dependencies, it is easier for researchers and practitioners to utilize EvoloPy for optimizing and benchmarking their own defined problems using the most powerful metaheuristic optimizers in the literature. This framework facilitates designing new algorithms or improving, hybridizing and analyzing the current ones.}
 
 
 \onecolumn \maketitle \normalsize \vfil
@@ -39,22 +39,22 @@
 \label{sec:introduction}
 
 
-Nature-inspired algorithms are population based metaheuristics which are inspired by different phenomena in nature. Due to their stochastic and non-deterministic nature, there have been a growing interest in ivestigating their applications for solving complex problems when the search space is extremely large and when it is impossible to solve them with conventional search methods \cite{Yang_2013}. 
+Nature-inspired algorithms are mostly population-based metaheuristics which are inspired by different phenomena in nature. Due to their stochastic and non-deterministic nature, there has been a growing interest in investigating their applications for solving complex problems when the search space is extremely large and when it is impossible to solve them with conventional search methods \cite{Yang_2013}. 
 
-In general, nature-inspired algorithms can fall into two main categories: Swarm Intelligent algorithms and Evolutionary Algorithms. Swarm intelligence algorithms simulate the natural swarms such as flocks of birds, ant colonies, and schools of fishes. Popular algorithms fall in this category are Particle Swarm Optimization (PSO) \cite{Kennedy95}, and Ant Colony Optimization (ACO) \cite{Koro_ec_2009}. More recent Swarm intelligence algorithms include Cuckoo Search (CS) \cite{Yang2009}, Grey Wolf Optimizer (GWO) \cite{Mirjalili201446}, Multi-Verse Optimizer (MVO) \cite{Mirjalili2016}, Moth-flame optimization (MFO) \cite{Mirjalili2015228}, Whale Optimization Algorithm (WOA) \cite{Mirjalili201651}, Bat Algorithm (BAT) \cite{Yang2010}, Firfly Algorithm (FFA) \cite{Yang2010FFA}, and many others. Most of Swarm intelligence algorithms reach the best solution by exchanging the information between the swarm's individuals. 
+In general, nature-inspired algorithms can fall into two main categories: Swarm Intelligence and Evolutionary Algorithms. Swarm intelligence algorithms simulate the natural swarms such as flocks of birds, ant colonies, and schools of fishes. Popular algorithms fall in this category are Particle Swarm Optimization (PSO) \cite{Kennedy95}, and Ant Colony Optimization (ACO) \cite{Koro_ec_2009}. More recent Swarm intelligence algorithms include Cuckoo Search (CS) \cite{Yang2009}, Grey Wolf Optimizer (GWO) \cite{Mirjalili201446}, Multi-Verse Optimizer (MVO) \cite{Mirjalili2016}, Moth-flame optimization (MFO) \cite{Mirjalili2015228}, Whale Optimization Algorithm (WOA) \cite{Mirjalili201651}, Bat Algorithm (BAT) \cite{Yang2010}, Firfly Algorithm (FFA) \cite{Yang2010FFA}, and many others. Most of Swarm intelligence algorithms reach the best solution by exchanging the information between the swarm's individuals. 
 
-On the other hand, evolutionary based algorithms are inspired by some concepts from the Darwinian theories about evolution and natural selection. Such algorithms include Genetic algorithm (GA) \cite{Holland92}, Genetic Programming (GP)\cite{Koza1992}, and Evolution Strategy (ES)\cite{Beyer2002}. These algorithms maintain different strategies to evolve and find good solutions for difficult problems based on evolutionary operators like mutation, crossover and elitism. 
+On the other hand, evolutionary-based algorithms are inspired by some concepts from the Darwinian theory about evolution and natural selection. Such algorithms include Genetic algorithm (GA) \cite{Holland92}, Genetic Programming (GP)\cite{Koza1992}, and Evolution Strategy (ES) \cite{Beyer2002}. These algorithms maintain different strategies to evolve and find good solutions for difficult problems based on evolutionary operators like mutation, crossover and elitism. 
 
-An important turn in the research field was made when the No Free Lunch Theorem (NFL) was released \cite{wolpert1997no,ho2002simple}. NFL states that no algorithm is superior to all other algorithms in all optimization problems. This means that if an algorithm A outperforms another algorithm B for some type of optimization problems then algorithm B outperforms A in another types of problems. Since the release of NFL, researcher and practitioners have developed a wide range of metaheuristic algorithms and investigated their applications in different types of tough optimization problems. In the last decade, most of the researchers implemented and shared their proposed optimizers in Matlab. This is due to its simplicity and ease of use. However, Matlab is a commercial and expensive software and portability is a big issue.
+An important twist in the research field was made when the No Free Lunch Theorem (NFL) was released \cite{wolpert1997no,ho2002simple}. NFL states that no algorithm is superior to all other algorithms when considering all optimization problems. This means that if an algorithm A outperforms another algorithm B on some type of optimization problems then algorithm B outperforms A in another types of problems. Since the release of NFL, researcher and practitioners have developed a wide range of metaheuristic algorithms and investigated their applications in different types of challenging optimization problems. In the last decade, most of the researchers implemented and shared their proposed optimizers in Matlab \cite{Yang2010FFA,Yang2010,Mirjalili201446,Mirjalili2015228}. This is due to its simplicity and ease of use. However, Matlab is a commercial and expensive software and portability is a big issue.
 
 In this paper, we introduce EvoloPy which is a framework written in Python that provides well-regarded and recent nature inspired optimizers. The goal of the package is to take the advantage of the rapidly growing scientific community of Python and provide a set of robust optimizers as free and open source software. We believe that implementing such algorithms in Python will increase their popularity and portability among researchers. Moreover, the powerful libraries and packages available in Python will make it more feasible to apply metaheurostic algorithms for solving complex problems on a much higher scale.
 
 
 
 \section{\uppercase{Related Work}}
-Today, there exist many different nature-inspired optimization libraries and frameworks. Some of them are developed for special type of nature-inspired optimization like GEATbx \cite{GEATbx}, which is a framework contains many variants of the genetic algorithms, and genetic Programming. GEATbx is implemented in MATLAB environment and provides many global optimization capabilities. The authors in \cite {GAlib} developed GAlib library, which contains a set of C++ genetic algorithm tools and operators for different optimization problems. GAlib is built on UNIX platforms and supported parallel experiments. 
+Today, many different nature-inspired optimization libraries and frameworks are available. Some of them are developed for special type of nature-inspired optimization like GEATbx \cite{GEATbx}, which is a framework contains many variants of the genetic algorithms, and genetic Programming. GEATbx is implemented in MATLAB environment and provides many global optimization capabilities. The authors in \cite {GAlib} developed GAlib library, which contains a set of C++ genetic algorithm tools and operators for different optimization problems. GAlib is built on UNIX platforms and supported parallel experiments. 
 
-In \cite {DEAP_JMLR2012}, the authors developed a novel evolutionary computation python framework called DEAP to simplify the execution of many optimization ideas with  parallelisation features. The DEAP Framework includes many nature-inspired algorithms with different variations such as: Genetic Algorithm, Genetic Programing (GP), Evolution Strategies (ES), Particle Swarm Optimization (PSO), Differential Evolution (DE), and multi-objective optimization. In addition, DEAP includes Benchmarks modules containing many test functions for evaluations. In \cite{Wagner04}, the author presents a generic optimization environment named HeuristicLab, which is implemented using C\# language. HeuristicLab is a framework for heuristic, evolutionary algorithms, and machine learning. HeuristicLab includes many algorithms such as: Genetic Programming, Age-layered Population, Structure (ALPS), Evolution Strategy, Genetic Algorithm, Island Genetic Algorithm, Particle Swarm Optimization, Relevant Alleles Preserving GA, and many others. 
+In \cite {DEAP_JMLR2012}, the authors developed a novel evolutionary computation Python framework called DEAP to simplify the execution of many optimization ideas with  parallelisation features. The DEAP Framework includes many nature-inspired algorithms with different variations such as: GA, GP, ES, PSO, Differential Evolution (DE), and multi-objective optimization. In addition, DEAP includes Benchmarks modules containing many test functions for evaluations. In \cite{Wagner04}, the author presents a generic optimization environment named HeuristicLab, which is implemented using C\# language. HeuristicLab is a framework for heuristic, evolutionary algorithms, and machine learning. HeuristicLab includes many algorithms such as: Genetic Programming, Age-layered Population, Structure (ALPS), Evolution Strategy, Genetic Algorithm, Island Genetic Algorithm, Particle Swarm Optimization, Relevant Alleles Preserving GA, and many others. 
 
 In \cite{Durillo2011}, jMetal is developed, which is a framework contains many metaheuristic algorithms implemented in Java programming. The authors employ the object-oriented architecture to develop the framework. jMetal includes many features such as: multi-objective algorithms, parallel algorithms, constrained problems, and different representations of the problem variables. In \cite{Cahon2004,humeau13}, the authors present a white-box object-oriented framework called ParadisEO. ParadisEO is developed by integrating Evolving Objects (EO) - which is an C++ evolutionary computation framework - and many distributed metaheuristics including local searches (LS), and hybridization mechanisms.  
 
@@ -73,7 +73,7 @@ EvoloPy provides a set of classical and recent nature-inspired metaheuristic opt
 \begin{itemize}
 \item The Optimizer: this is the main interface of the of the framework in which the users can select a list of optimizers to run in their experiment. Using this interface, the user can configure common parameters for the algorithms like the maximum number of iterations for each run, the size of the population and the number of runs. In addition, a list of benchmark problems can be selected.
 
-\item The metaheuristics algorithms: simply this part includes the list of implemented optimizers in the framework. At the time of writing this paper, the following eight algorithms are implemented:
+\item The metaheuristics algorithms: simply this part includes the list of implemented optimizers in the framework. At the time of writing this paper, the following eight algorithms have been implemented:
 
 \begin{itemize}
 \item Particle Swarm Optimization (PSO)
@@ -128,7 +128,7 @@ Moreover, with \texttt{Numpy} it is possible to perform vector operations in sim
 Where \texttt{lb} and \texttt{ub} are the upper and lower bounds respectively.
 
 \begin{figure*}
-\centerline{\includegraphics[scale=0.33]{classD.eps}}
+\centerline{\includegraphics[scale=0.35]{classD.eps}}
 \caption{Class diagram of the EvoloPy framework}
 \label{fig:framework}
 \end{figure*}
@@ -154,36 +154,27 @@ The results of EvoloPy and Matlab implementations are shown in Figure \ref{fig:c
 
 The efficient running time of EvoloPy compared to Matlab implementation when applied for solving problems with large number of variables can be explained due to the use of the powerful N-dimensional array object \texttt{NumPY} to represent individuals and populations.
 
-\begin{figure*}[H]
+\begin{figure*}
 \centering
-\begin{tabular}{ c c  }
+\begin{tabular}{ |c |c|  }
 \centering
 \subfigure[BAT]{\includegraphics[scale=.45]{BAT.eps}\label{t1}} & 
 \subfigure[CS]{\includegraphics[scale=.45]{CS.eps}} 
-
-
 \\
 \subfigure[FFA]{\includegraphics[scale=.45]{FPA}\label{subfigf6t}} & 
 \subfigure[GWO]{\includegraphics[scale=.45]{GWO}\label{subfigf2s}} 
-
-
 \\
 \subfigure[MFO]{\includegraphics[scale=.45]{MFO.eps}\label{subfigf4s}} & 
 \subfigure[MVO]{\includegraphics[scale=.45]{MVO.eps}\label{subfigf6s}}
-
 \\
-
 \subfigure[PSO]{\includegraphics[scale=0.45]{PSO.eps}\label{t2}} &  
 \subfigure[WOA]{\includegraphics[scale=0.45]{WOA.eps}\label{subfigf4t}} 
-
-
 \\
-
 \end{tabular}
 
 \caption{Comparison between the metaheuristic optimizers in EvoloPy and Matlab based on the running time of the main iteration.}
 \label{fig:comparison-time}
-\vspace{-0.0in}
+%\vspace{-0.0in}
 \end{figure*}
 
 
@@ -197,7 +188,7 @@ The efficient running time of EvoloPy compared to Matlab implementation when app
 
 EvoloPy is a framework written in Python that provides and maintains classical and recent nature inspired metaheuristic algorithms. Being coded in Python with its NumPy extension, the implemented algorithms are boosted by the powerful and efficient multi-dimensional objects. In comparison with Matlab, EvoloPy shows more efficiency in terms of running time for problems with  high dimension and large number of variables. 
 
-For future work, more recent and robust metaheuristic algorithms are planned to be added to the framework. It is also interesting to expand the experiments presented in this paper to include a comparison with Matlab or other implementations based on more complex and sophisticated optimization functions rather than simple ones. 
+For future work, more recent and robust metaheuristic algorithms are planned to be added to the framework. It is also interesting to expand the experiments presented in this paper to include a comparison with Matlab or other implementations based on more challenging and sophisticated optimization functions rather than simple ones. 
 
 
 
