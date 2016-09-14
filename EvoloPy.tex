@@ -42,7 +42,8 @@
   their own defined problems using the most powerful metaheuristic
   optimizers in the literature. This framework facilitates designing
   new algorithms or improving, hybridizing and analyzing the current
-  ones.} 
+  ones. The source code of EvoloPy is publicly available at GitHub (\url{https://github.com/7ossam81/EvoloPy})
+} 
 
 
 \onecolumn \maketitle \normalsize \vfil
@@ -168,8 +169,7 @@ Where \texttt{lb} and \texttt{ub} are the upper and lower bounds respectively.
 \label{fig:framework}
 \end{figure*}
 
-To demonstrate the main components of EvoloPy framework we use the UML representation. A class diagram illustrating the EvoloPy components and their relationships is presented in Figure \ref{fig:framework}. The EvoloPy framework consists of eleven classes, three of them for coordinating and simplifying the optimization process, namely; optimizer, benchmarks, and solution. On the other hand, the other eight classes represent the actual Nature-inspired optimizers. The core flow of EvoloPy relies in that an optimizer solves a benchmark using one or more optimizers to find global solutions. We have used a generic classes names in the framework in order to make it very easy to flow and general enough to be modified and usable.
-
+To demonstrate the main components of EvoloPy framework we use the UML representation. A class diagram illustrating the EvoloPy components and their relationships is presented in Figure \ref{fig:framework}. The EvoloPy framework consists of eleven classes, three of them for coordinating and simplifying the optimization process, namely; optimizer, benchmarks, and solution. On the other hand, the other eight classes represent the actual Nature-inspired optimizers. The core flow of EvoloPy relies in that an optimizer solves a benchmark using one or more optimizers to find global solutions. We have used a generic classes names in the framework in order to make it very easy to flow and general enough to be modified and usable. 
 
 
 
@@ -202,7 +202,7 @@ populations.
 
 \begin{figure*}
 \centering
-\begin{tabular}{ |c |c|  }
+\begin{tabular}{ c c }
 \centering
 \subfigure[BAT]{\includegraphics[scale=.45]{BAT.eps}\label{t1}} & 
 \subfigure[CS]{\includegraphics[scale=.45]{CS.eps}} 
