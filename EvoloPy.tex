@@ -110,7 +110,7 @@ EvoloPy provides a set of classical and recent nature-inspired metaheuristic opt
 \begin{itemize}
 \item The Optimizer: this is the main interface of the framework in which the users can select a list of optimizers to run in their experiment. Using this interface, the user can configure common parameters for the algorithms like the maximum number of iterations for each run, the size of the population and the number of runs. In addition, a list of benchmark problems can be selected.
 
-\item The metaheuristics algorithms: simply this part includes the list of implemented optimizers in the framework. At the time of writing this paper, the following eight algorithms have been implemented:
+\item The metaheuristic algorithms: simply this part includes the list of implemented optimizers in the framework. At the time of writing this paper, the following eight algorithms have been implemented:
 
 \begin{itemize}
 \item Particle Swarm Optimization (PSO)
@@ -151,11 +151,11 @@ x_{n}^{1} & x_{n}^{2} & ... & x_{n}^{d}
 \label{eq:population}
 \end{equation}
 
-In EvoloPy, \texttt{Numpy} is chosen to define and represent the populations and individuals in the optimizers. \texttt{Numpy} is an open-source extension to Python that provides common scientific computing and mathematical routines as pre-compiled and fast functions. \texttt{NumPy} also supports large multidimensional arrays and matrices and it offers a variety range of functions to handle and perform common operations on these arrays. \texttt{Numpy} has many things in common with Matlab. This makes it easier for researchers who are familiar with Matlab to use EvoloPy. 
+In EvoloPy, \texttt{Numpy} is chosen to define and represent the populations and individuals in the optimizers. \texttt{Numpy} is an open-source extension to Python that provides common scientific computing and mathematical routines as pre-compiled and fast functions. \texttt{NumPy} also supports large multidimensional arrays and matrices and it offers a varied range of functions to handle and perform common operations on these arrays. \texttt{Numpy} has many things in common with Matlab. This makes it easier for researchers who are familiar with Matlab to use EvoloPy. 
 
 The core data structure \texttt{ndarray} (abbreviation for N-dimensional array) in \texttt{Numpy} is used to define 1-dimensional and 2-dimensional arrays that represent individuals and populations, respectively. For example, to define a randomly generated initial population with 50 individuals and 100 dimensions the following python line of code can be used
 
-\texttt{initialPop = np.random.rand(500,100)}
+\texttt{initialPop = np.random.rand(50,100)}
 
 
 Moreover, with \texttt{Numpy} it is possible to perform vector operations in simple and compact syntax. For example, one of the common operations used in many metaheuristic algorithms is to check the boundaries of the elements of the individuals after updating them. This can be performed all at once with \texttt{Numpy} as follows:
@@ -170,14 +170,14 @@ Where \texttt{lb} and \texttt{ub} are the upper and lower bounds respectively.
 \label{fig:framework}
 \end{figure*}
 
-To demonstrate the main components of EvoloPy framework we use the UML representation. A class diagram illustrating the EvoloPy components and their relationships is presented in Figure \ref{fig:framework}. The EvoloPy framework consists of eleven classes, three of them for coordinating and simplifying the optimization process, namely; optimizer, benchmarks, and solution. On the other hand, the other eight classes represent the actual nature-inspired optimizers. The core flow of EvoloPy relies in that an optimizer solves a benchmark using one or more optimizers to find global solutions. We have used a generic classes names in the framework in order to make it very easy to flow and general enough to be modified and usable. 
+To demonstrate the main components of EvoloPy framework we use the UML representation. A class diagram illustrating the EvoloPy components and their relationships is presented in Figure \ref{fig:framework}. The EvoloPy framework consists of eleven classes, three of them for coordinating and simplifying the optimization process, namely; optimizer, benchmarks, and solution. On the other hand, the other eight classes represent the actual nature-inspired optimizers. The core flow of EvoloPy relies in that an optimizer solves a benchmark using one or more optimizers to find global solutions. We have used generic classes names in the framework in order to make it very easy to flow and general enough to be modified and usable. 
 
 
 
 
 \section{\uppercase{Comparison with Matlab}}
 
-In this section we compare the metaheuristic algorithms implemented so far in EvoloPy with their peers in Matlab based on their running time. The idea here is to measure the running time of the main loop of each algorithm in EvoloPy and Matlab with an equal number of function evaluations. The experiments were performed on on a personal machine with an  Intel(R) Core(TM) i5-2400 CPU at 3.10Ghz and a memory of 4 GB running Windows 7 professional 32bit operating system. In all experiments, the population size and the number of iterations were set to 50, and 100, respectively for all algorithms . In order to study the effect of the size of the problem on the running time of the algorithms, all optimizer were executed using different dimension lengths ranging from a small number of 50 elements reaching up to 20,000 in both implementations, Matlab and EvoloPy. Note that the dimension length here indicates number of elements in a single individual or in another words, number of of variables in the objective function. All optimizers were applied to minimize the unimodal function given in Equation \ref{eq:f3}. 
+In this section we compare the metaheuristic algorithms implemented so far in EvoloPy with their peers in Matlab based on their running time. The idea here is to measure the running time of the main loop of each algorithm in EvoloPy and Matlab with an equal number of function evaluations. The experiments were performed on a personal machine with an  Intel(R) Core(TM) i5-2400 CPU at 3.10Ghz and a memory of 4 GB running Windows 7 professional 32bit operating system. In all experiments, the population size and the number of iterations were set to 50, and 100, respectively for all algorithms. In order to study the effect of the size of the problem on the running time of the algorithms, all optimizer were executed using different dimension lengths ranging from a small number of 50 elements reaching up to 20,000 in both implementations, Matlab and EvoloPy. Note that the dimension length here indicates number of elements in a single individual or in another words, number of of variables in the objective function. All optimizers were applied to minimize the unimodal function given in Equation \ref{eq:f3}. 
 
 
 
