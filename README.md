@@ -1,3 +1,3 @@
 # 2016-EvoloPy-paper-ECTA
 
-A paper about EvoloPy toolbox to be submitted for ECTA conference.
+The paper "EvoloPy: An Open-Source Nature-Inspired Optimization Framework in Python" is accepted in ECTA conference (http://www.ecta.ijcci.org/)
